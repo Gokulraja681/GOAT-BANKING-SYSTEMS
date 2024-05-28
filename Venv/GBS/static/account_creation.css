@@ -1,0 +1,224 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Zilla+Slab:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+
+body {
+    background-image: url('new_create.png');
+    height: 100%;
+    width: 100%;
+    place-items: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    margin: 0;
+    padding: 0;
+}
+
+.container{
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 15px;
+    width: 80%;
+    height: 420%;
+    margin: auto;
+    justify-content: center;
+}
+
+.space,.head{
+    height: 100px;
+}
+
+.form_header{
+    display: flex;
+    margin-bottom: 30px;
+}
+.add{
+    width: 50%;
+    margin-left: 110px;
+}
+.first select, .second select, .marital-status select, .first_pr select{
+    background-color: rgba(255, 255, 255, 0.7);
+    height: 44px;
+    border: none;
+    color: #000000;
+    padding: 10px 20px;
+    width: 100%;
+    border-radius: 5px;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 16px;
+}
+
+
+.first_row{
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 100px;
+}
+
+
+
+.second_row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 60px;
+
+}
+
+
+.third_row{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 60px;
+
+}
+
+
+.fourth_row{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 60px;
+
+}
+
+
+.fifth_row{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 60px;
+}
+
+
+.user_address{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 60px;
+}
+
+
+.user_country{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 60px;
+}
+
+
+.check{
+    display: flex;
+}
+
+.back_btn {
+    margin-right: 250px;
+    right: 0;
+    position: absolute;
+}
+
+
+.buttons{
+    margin: auto;
+    justify-content: center;
+    display: flex;
+}
+
+.input {
+    width: 240px;
+    height: 44px;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: .5rem;
+    padding: 0 1rem;
+    border: 2px solid transparent;
+    font-size: 1rem;
+    transition: border-color .3s cubic-bezier(.25,.01,.25,1) 0s, color .3s cubic-bezier(.25,.01,.25,1) 0s,background .2s cubic-bezier(.25,.01,.25,1) 0s;
+}
+
+input[type="text"], input[type="radio"], input[type="date"], input[type="number"]{
+    font-family: "PT Serif", serif;
+    font-size: 20px;
+}
+
+select{
+    font-family: "PT Serif", serif;
+    font-size: 20px;
+}
+  
+.label {
+    display: block;
+    font-family: "Roboto Slab", serif;
+    margin-bottom: 10px;
+    font-size: 20px;
+    color: black;
+    transition: color .3s cubic-bezier(.25,.01,.25,1) 0s;
+}
+  
+.input:hover, .input:focus, .input-group:hover .input {
+    outline: none;
+    border-color: #05060f;
+}
+  
+.input-group:hover .label, .input:focus {
+    color: #05060fc2;
+}
+
+.first{
+    margin-left: 40px;
+}
+
+.second{
+    margin-right: 50px;
+}
+
+.bordering{
+    width: 90%;
+    margin-left: 50px;
+    border-radius: 14px;
+    border: 2px solid gray;
+    margin-bottom: 50px;
+}
+
+
+.btn{
+    width: 90px;
+    height: 40px;
+    border-radius: 10px;
+    border: 0;
+    background-color: #0BDA51;
+    cursor: pointer;
+}
+
+.btn:hover{
+    background-color: #04a93b;
+}
+
+#reset{
+    background-color: #D2042D;
+}
+
+#reset:hover{
+    background-color: #9b0322;
+}
+
+#back{
+    background-color: #1F51FF;
+}
+#back:hover{
+    background-color: #072db4;
+}
+
+.heading{
+    margin-left: 20px;
+    font-family: "Libre Baskerville", serif;
+    font-size: 25px;
+}
+
+.para {
+    font-family: "Zilla Slab", serif;
+    font-size: 20px;
+}
+
+.top_head{
+    margin-top: 40px;
+    margin-left: 20px;
+}

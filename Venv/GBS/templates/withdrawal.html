@@ -1,0 +1,88 @@
+<html>
+<head>
+    <title>Withdrawal</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='withdrawal.css')}}">
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+</head>
+<body>
+    <div>
+        <header style="height: 20%;">
+        </header>
+    </div>
+    <div class="container">
+        <div style="height: 10%;">
+
+        </div>
+        <div class="total">
+            <div class="first-set">
+                <div class="bordering">
+                    <div class="datas">
+                        <div class="keys">
+                            <p class="para">Account Number </p>
+                            <p class="para">Account Holder's Name</p>
+                        </div>
+                        <div class="values">
+                            <p>{{data.Account_Number}}</p>
+                            <p> {{data.Prefix}} {{data.First_Name}} {{data.Last_Name}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <form action="/withdrawal" method="post">
+                    <div class="second">
+                        <div class="bordering">
+                            <div class="contents">
+                                <div>
+                                    <p class="para">Enter the amount for Withdrawal</p>
+                                </div>
+                                <div>
+                                    <label for="amt" class="label">Enter Amount for withdrawal</label>
+                                    <input type="number" name="amt" class="input" required>
+                                </div>
+                                {% if msg %}
+                                   <p>{{msg}}</p>
+                                {% endif %}
+                                {%if msg3 %}
+                                   <p>{{msg3}}</p>
+                                {% endif %}
+                                <div>
+                                    <label for="pin" class="label">Enter your Pin</label>
+                                    <input type="text" name="pin" class="input" required>
+                                </div>
+                                {% if msg1 %}
+                                   <p>{{msg1}}</p>
+                                {% endif %}    
+                            </div>
+                        </div>    
+                    </div>
+                    <div class="btns">
+                        <div>
+                            <input type="submit" name="submit" value="Withdraw" class="deposit">
+                        </div>
+                        <div style="padding-left: 30px;">
+                            <input type="reset" name="reset" value="Reset" class="reset-btn">
+                        </div>
+                    </div>
+                    {% if notify %}
+                       <p>{{notify}}</p>
+                    {% endif %}
+                    {% if msg2 %}
+                       <p>{{msg2}}</p>
+                    {% endif %}
+                </form>    
+            </div>    
+        </div>
+        <div class="Back">
+            <form action="/index">
+                <input type="submit" name="submit" value="Back" class="back-btn"> 
+            </form>
+        </div>
+    </div>
+    <footer>
+        <div style="height: 30%;">
+
+        </div>
+    </footer>
+</body>
+</html>

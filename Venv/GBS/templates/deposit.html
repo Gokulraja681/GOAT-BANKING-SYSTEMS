@@ -1,0 +1,82 @@
+<html>
+    <head>
+        <title>deposit</title>
+        <link rel="stylesheet" href="{{url_for('static', filename='deposit.css')}}">
+    </head>
+<body>
+    <div>
+        <header style="height: 20%;">
+        </header>
+    </div>
+    <div class="container">
+        <div style="height: 10%;">
+            
+        </div>
+        <div class="total">
+            <div class="first-set">
+                <div class="bordering">
+                    <div class="datas">
+                        <div class="keys">
+                            <p class="para">Account Number</p>
+                            <p class="para">Account Holder's Name</p>
+                        </div>
+                        <div class="values">
+                            <p>{{data.Account_Number}}</p>
+                            <p>{{data.Prefix}} {{data.First_Name}} {{data.Last_Name}}</p>
+                        </div>
+                    </div>    
+                </div>
+            </div>
+            <div>
+                <form action="/deposit" method="Post">
+                    <div class="second">
+                        <div class="bordering">
+                            <div class="contents">
+                                <div>
+                                    <P class="para">Minimum Amount for Deposit is 500</P>
+                                </div>
+                                <div>
+                                    <label for="amt" class="label">Enter amout for deposit </label>
+                                    <input type="number" name="amt" class="input" required>
+                                </div>
+                                {% if msg %}
+                                  <p>{{msg}}</p>
+                                {% endif %}
+                                <div>
+                                    <label class="label" for="pin">Enter your Pin </label>
+                                    <input type="text" name="pin" class="input" required>
+                                </div> <br>
+                                {% if msg1 %}
+                                  <p>{{msg1}}</p>
+                                {% endif %}    
+                            </div>
+                        </div>    
+                    </div>
+                    <div class="btns">
+                        <div>
+                            <input type="submit" name="submit" value="Deposit" class="deposit">
+                        </div>
+                        <div style="padding-left: 30px;">
+                            <input type="reset" name="reset" value="Reset" class="reset-btn">
+                        </div>    
+                    </div>
+                    {% if notify %}
+                       <p>{{notify}}</p>
+                    {% endif %}
+                    {% if msg2 %}
+                       <p>{{msg2}}</p>
+                    {% endif %}
+                </form>    
+            </div>    
+        </div>
+        <div class="back">
+            <form action="/index">
+                <input type="submit" name="submit" value="Back" class="back-btn">
+            </form>
+        </div>
+    </div>
+    <footer>
+        <div style="height: 30%;"></div>
+    </footer>
+</body>
+</html>

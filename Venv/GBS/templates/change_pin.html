@@ -1,0 +1,86 @@
+<html>
+<head>
+    <title>Change Pin</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='change_pin.css')}}">
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+</head>
+<body>
+    <div>
+        <header style="height: 10%;"></header>
+    </div>
+    <div class="container">
+        <form action="/change_pin" method="post" autocomplete="off">
+            <div style="height: 30px;">
+
+            </div>
+            <div class="top">
+                <h3>Change Pin</h3>
+            </div>
+            <div class="bordering">
+                <div class="datas">
+                    <div>
+                        <label for="mbno" class="label">Mobile Number </label>
+                        <input type="text" name="mbno" id="" class="input">
+                    </div>
+                   <div>
+                        {% if msg %}
+                          <p>{{msg}}</p>
+                        {% endif %}
+                   </div>
+                    <div>
+                        <label for="acn" class="label">Account Number </label>
+                        <input type="number" name="acn" class="input" id="">
+                    </div>
+                    <div>
+                        {% if msg1 %}
+                          <p>{{msg1}}</p>
+                        {% endif %}
+                    </div>
+                    <div style="color: red;">
+                        <p class="para">* Pin must contain 6 characters !</p>
+                    </div>
+                    <div>
+                        <label for="re-pin" class="label">Reset Pin </label>
+                        <input type="text" name="re_pin" class="input" id="">
+                    </div>
+                    <div>
+                        {% if msg2 %}
+                           <p>{{msg2}}</p>
+                        {% endif %}
+                    </div>
+                    <div>
+                        <label for="pin" class="label">Confirm Pin </label>
+                        <input type="text" name="pin" class="input" id="">
+                    </div>
+                    <div>
+                        {% if msg3 %}
+                          <p>{{msg3}}</p>
+                        {% endif %}
+                    </div>
+                </div>    
+            </div>
+            <div class="btns">
+                <div>
+                    <input type="submit" name="submit" class="done" value="Change">
+                </div>
+                <div>
+                    <input type="reset" name="reset" value="Reset" class="Reset">
+                </div>    
+            </div>
+            <div>
+                {% if msg4 %}
+                   <p>{{msg4}}</p>
+                {% endif %}
+            </div>
+        </form>
+        <div>
+            <form action="/index">
+                <input type="submit" class="back" name="submit" value="Back">
+            </form>    
+        </div>        
+    </div>
+    <div>
+        <footer style="height: 10%;"></footer>
+    </div>
+</body>
+</html>

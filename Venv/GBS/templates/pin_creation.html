@@ -1,0 +1,88 @@
+<html>
+    <head>
+        <title>Pin Creation</title>
+        <link rel="stylesheet" href="{{url_for('static', filename='pin_creation.css')}}">
+    </head>
+<body>
+    <div>
+        <header style="height: 15%;">
+        </header>
+    </div>
+    <div class="container">
+        <form action="/pin_creation" method="post" >
+            <div style="height: 30px;">
+
+            </div>
+            <div class="top">
+                <h3>Pin Creation</h3>
+            </div>
+            <div class="bordering">
+                <div>
+                    {% if msg6 %}
+                      <p class="errors">{{msg6}}</p>
+                    {% endif %}
+                </div>
+                <div class="datas">
+                    <div>
+                        <label for="acn" class="label">Account Number </label>
+                        <input type="number" name="acn" id="" class="input" required>
+                    </div>
+                    <div>
+                        {% if msg1 %}
+                           <p class="errors">{{msg1}}</p>
+                        {% elif msg2 %}
+                           <p class="errors">{{msg2}}</p>
+                        {% endif %}
+                    </div>
+                    <div>
+                        <label for="mbno" class="label" >Mobile Number </label>
+                        <input type="text" name="mbno" id="" class="input" required >
+                    </div>
+                    <div>
+                        {% if msg3 %}
+                          <p class="errors">{{msg3}}</p>
+                        {% endif %}
+                    </div>
+                    <div class="para">
+                        <p style="color: red;"> * Pin must contain 6 characters !</p>
+                    </div>
+                    <div>
+                        <label for="create_pin" class="label">Create Pin </label>
+                        <input type="text" name="create_pin" class="input" id="">
+                    </div>
+                    <div>
+                        {% if msg4 %}
+                           <p class="errors">{{msg4}}</p>
+                        {% endif %}
+                    </div>
+                    <div>
+                        <label for="confirm_pin" class="label">Confirm Pin </label>
+                        <input type="text" name="pin" id="" class="input">
+                    </div> 
+                    <div>
+                        {% if msg5 %}
+                           <p class="errors ">{{msg5}}</p>
+                        {% endif %}
+                    </div>   
+                </div>    
+            </div>
+            <div class="btns">
+                <div>
+                    <input type="submit" name="submit" class="done" value="Done">
+                </div>
+                <div>
+                    <input type="reset" name="reset" class="reset" value="Clear">
+                </div>    
+            </div>
+        </form>
+        <div>
+            <div>
+                <a href="/index"><button class="back"> Back</button></a>
+            </div>
+        </div>    
+    </div>
+    <div>
+        <footer style="height: 15%;"></footer>
+    </div>
+</body>
+</html>

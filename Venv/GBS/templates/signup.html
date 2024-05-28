@@ -1,0 +1,63 @@
+<html>
+    <head>
+        <title>Sign Up</title>
+        <link rel="stylesheet" href="{{url_for('static', filename='signup.css')}}">
+    </head>
+<body>
+    <center>
+      <div class="form-container">
+         <div class="wrapper">
+            <div class="title">
+               Register
+            </div>
+            <form action="{{url_for('signup')}}" method="post" autocomplete="off">
+                <div class="field">
+                    <input type="text" name="fname" required>
+                    <label for="fname">First Name</label>
+                </div>
+                <div class="field">
+                    <input type="text" name="lname" required>
+                    <label for="lname">Last Name</label>
+                </div>  
+               <div class="field">
+                    <input type="email" name="gmail" required>
+                    <label for="email">Mail-ID</label>
+               </div>
+               {% if msg2 %}
+                  <p style="color: red;">{{msg2}}</p>
+               {% endif %}
+               <div class="field">
+                    <input type="password" name="p" required>
+                    <label for="password">Create Password</label>
+                </div>
+                {% if msg %}
+                  <p style="color: red;">{{msg}}</p>
+                {% endif %}
+                <div class="field">
+                    <input type="password" name="pswd" required>
+                    <label for="password">Confirm Password</label>
+                </div>
+                {% if msg1 %}
+                  <p style="color: red;">{{msg1}}</p>
+                {% endif %}
+               <div class="content">
+                  <div class="checkbox">
+                     <input type="checkbox" id="remember-me" required>
+                     <label for="remember-me">Terms and Conditions</label>
+                  </div>
+               </div>
+               <div class="field">
+                   <input type="submit" value="Register">
+                   {% if notify %}
+                      <p style="color: green;">{{notify}}</p>
+                   {% endif %}
+                </div>
+            </form>
+            <div class="signup-link">
+                Already a member? <a href="/signin">Signin here</a>
+            </div>
+         </div>
+      </div> 
+    </center>
+</body>
+</html>

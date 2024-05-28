@@ -1,0 +1,71 @@
+<html>
+    <head>
+        <title>Signin</title>
+        <link rel="stylesheet" href="{{url_for('static', filename='signin.css')}}">
+    </head>
+<body>
+    <center>
+      <div class="form-container">
+         <div class="wrapper">
+            <div class="title">
+               Login
+            </div>
+            <form action="/signin" method="post" autocomplete="off">
+               <div class="field">
+                  <input type="email" name="s_gmail" required>
+                  <label for="s_gmail">Email Address</label>
+               </div>
+               <div class="field">
+                  <input type="password" name="s_pswd" required>
+                  <label for="s_pswd">Password</label>
+               </div>
+               {% if msg %}
+                  <p style="color: red;">{{msg}}</p>
+               {% endif %}
+               <div class="content">
+                  <div class="checkbox">
+                     <input type="checkbox" id="remember-me" required>
+                     <label for="remember-me">Remember me</label>
+                  </div>
+                  <div class="pass-link">
+                     <a href="/forget_password">Forgot password?</a>
+                  </div>
+               </div>
+               <div class="field">
+                  <input type="submit" value="Login">
+               </div>
+               <div class="signup-link">
+                  Not a member? <a href="/signup">Signup now</a>
+               </div>
+            </form>
+         </div>
+      </div>
+      
+    </center>
+</body>
+</html>
+
+
+<!--
+<form action="/signin" method="post">
+    <div>
+        <label for="s_gmail">Enter your Mail_ID: </label>
+        <input type="email" name="s_gmail" id="">
+    </div> <br>
+    <div>
+        <label for="s_pswd">Enter your Password: </label>
+        <input type="text" name="s_pswd" id="">
+        <a href="/forget_password">Forget Password ?</a>
+    </div> <br>
+    {% if msg %}
+      <p>{{msg}}</p>
+    {% endif %}
+    <div>
+        <input type="submit" name="submit" value="Submit">
+        <input type="reset" name="reset" value="Reset">
+    </div>
+    {% if msg1 %}
+       <p>{{msg1}}</p>
+    {% endif %}
+</form>
+-->

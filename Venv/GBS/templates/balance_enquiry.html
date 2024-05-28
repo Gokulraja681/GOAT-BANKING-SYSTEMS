@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <title>Balance</title>
+        <link rel="stylesheet" href="{{url_for('static', filename='balance_enquiry.css')}}">
+    </head>
+<body>
+    <div>
+        <header style="height: 20%;"></header>
+    </div>
+    <div class="container">
+        <div>
+            <form action="/balance_enquiry" method="get">
+                <div style="height: 10px;"></div>
+                <div class="top">
+                    <p style="color: green;">{{msg}}</p>
+                </div>
+                <div class="total">
+                    <div class="bordering">
+                        <div class="datas">
+                            <div class="keys">
+                                <p>Account Number</p>
+                                <p>Account Holder's Name</p>
+                                <p>Current Balance</p>
+                            </div>
+                            <div class="values">
+                                <p>{{data.Account_Number}}</p>
+                                <p>{{data.Prefix}} {{data.First_Name}} {{data.Last_Name}}</p>
+                                <p>{{data.Amount}}</p>
+                            </div>    
+                        </div>    
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="back">
+            <form action="/index">
+                <input type="submit" name="submit" value="Back" class="back-btn">
+            </form>
+        </div>    
+    </div>
+</body>
+</html>

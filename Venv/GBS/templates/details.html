@@ -1,0 +1,19 @@
+<html>
+    <head>
+        <title>Details</title>
+    </head>
+<body>
+    <h1>This my user detail section</h1>
+    <form action="/details" method="get">
+        {% for data in all_details %}
+        <div>
+            <p>Username: {{data.fname}} {{data.lname}}</p>
+            <p>Mail-ID: {{data.gmail}}</p>
+            <p>Password: {{data.pswd}}</p>
+        </div>
+        <hr>
+        {% endfor %}
+    </form>
+    <a href="/signin">goto signin</a>
+</body>
+</html>

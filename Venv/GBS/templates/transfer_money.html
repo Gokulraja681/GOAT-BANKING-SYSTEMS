@@ -1,0 +1,107 @@
+<html>
+<head>
+    <title>Transfer Money</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='transfer_money.css')}}">
+</head>
+<body>
+    <div>
+        <header>
+            <div style="height: 15%;"></div>
+        </header>
+    </div>
+    <div class="container">
+        <form action="/transfer_money" method="post">
+            <div style="height: 5%;">
+            </div>
+            <div style="margin-top: 20px;">
+                <h2 class="heading">Transfer Money</h2>
+            </div>
+            <div class="total"> 
+                <div>
+                    <div class="bordering">
+                        <div class="datas">
+                            <div class="keys">
+                                <p>Accountholder Name</p>
+                                <p>Account Number</p>
+                            </div>
+                            <div class="values">
+                                <p>{{data.Prefix}} {{data.First_Name}} {{data.Last_Name}}</p>
+                                <p>{{data.Account_Number}}</p>
+                            </div>    
+                        </div>        
+                    </div>
+                    <div class="bordering">
+                        <div class="activities">
+                            <div>
+                                {% if msg3 %}
+                                    <p class="errors">{{msg3}}</p>
+                                {% endif %}
+                            </div>
+                            <div>
+                                <p class="para">Enter receiver account number below</p>
+                            </div>
+                            <div>
+                                <label for="Confirmation" class="label">Account Number </label>
+                                <input type="search" name="receiver" class="input">
+                            </div>
+                            <div>
+                                {% if msg %}
+                                  <p class="errors">{{msg}}</p>
+                                {% elif msg4 %}
+                                   <p class="errors">{{msg4}}</p>
+                                {% endif %}
+                            </div>
+                            <div>
+                                <div>
+                                    <label for="Checking" class="label">Enter amount: </label>
+                                    <input type="number" name="amt" class="input">
+                                </div>
+                            </div>    
+                            <div class="transfer">
+                                <div>
+                                    <label for="Pin" class="label">Pin</label>
+                                    <input type="text" name="pin" class="input">
+                                </div>
+                                <div class="transfer-btn">
+                                    <input type="submit" name="submit" value="Transfer" id="tbn">
+                                </div>  
+                            </div>
+                            {% if receiver_account %}
+                                <div>
+                                    <p>Money Transferred Successfully to {{receiver_account.First_Name}} {{receiver_account.Last_Name}} </p>
+                                </div>
+                            {% endif %}        
+                        </div> 
+                        <div>
+                            {% if msg1 %}
+                              <p class="errors">{{msg1}}</p>
+                            {% elif msg2 %}
+                               <p class="errors"> {{msg2}} </p>
+                            {% endif %}
+                        </div>
+                        <div>
+                            {% if msg5 %}
+                               <p class="errors">{{msg5}}</p>
+                            {% endif %}
+                        </div>    
+                    </div>
+                </div>    
+            </div>
+        </form>
+        <div class="btm-btns">
+            <div>
+                <a href="/transfer_money"><button class="Refresh">Refresh</button></a>
+            </div>
+            <div>
+                <a href="/balance_enquiry"><button class="Balance">Balance Check</button></a>
+            </div>
+        </div>
+    </div>
+    <div>
+        <footer>
+            <div style="height: 10%;">
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
